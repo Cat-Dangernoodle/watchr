@@ -4,14 +4,15 @@ const db = require('../models/userModels');
 
 const userController = {};
 
+
 userController.signup = (req, res, next) => {
   console.log('Signup body', req.body);
   console.log('Signup query', req.query);
+
   const query = `
   INSERT INTO users(username, email, password, netflix, hulu, amazon)
-  VALUES ('${req.body.newUser}', '${req.body.email}', '${
-    req.body.newPassword
-  }' , 
+  VALUES ('${req.body.newUser}', '${req.body.email}', '${req.body.newPassword
+    }' , 
   '${JSON.parse(req.body.netflix)}', '${JSON.parse(req.body.hulu)}',
   '${JSON.parse(req.body.amazon)}')
   `;
@@ -25,14 +26,17 @@ userController.signup = (req, res, next) => {
     });
 };
 
+
 userController.login = (req, res, next) => {
+
   const loginQuery = `
   SELECT username, password
   FROM users
-  WHERE username = '${req.body.username}' AND password = '${req.body.password}'
+  WHERE username = '${req.body.username}' AND password = '${req.body.password}' 
   `;
 
   console.log('Made it to the login controller');
+
   db.query(loginQuery, (err, data) => {
     if (err) {
       console.log(`Database request error! ${err}`);
@@ -49,6 +53,7 @@ userController.login = (req, res, next) => {
   });
 };
 
+
 userController.setServices = (req, res, next) => {
   const query = `
   SELECT netflix, hulu, amazon
@@ -60,19 +65,23 @@ userController.setServices = (req, res, next) => {
 
   db.query(query).then((data) => {
     // console.log(typeof data.rows[0].netflix);
+    console.log(data);
     console.log(data.rows[0]);
     data.rows[0].prime = data.rows[0].amazon;
+
     delete data.rows[0].amazon;
     res.cookie('userServices', JSON.stringify(data.rows[0]));
     next();
   });
 };
 
+
 userController.searchServices = (req, res, next) => {
   // check the properties in the cookie to check which services the user has, save that in a variable, array of strings if true
   console.log('Search query: ', req.body.search);
   const array = [];
   const userServices = JSON.parse(req.cookies.userServices);
+
   console.log('searchServices cookie: ', userServices);
   Object.keys(userServices).forEach((service) => {
     // console.log('Service: ', service);
@@ -114,7 +123,7 @@ userController.searchServices = (req, res, next) => {
         }
       });
       // STEP 2: Add poster and title to the obj
-      res.locals.kyung.poster = response.data.posterURLs['342'];
+      res.locals.kyung.poster = response.data.posterURLs['342']; // - ?
       res.locals.kyung.title = response.data.title;
 
       next();
