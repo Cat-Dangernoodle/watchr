@@ -16,6 +16,7 @@ import './components/styles/MainContainer.css';
 // React Router Documentation
 // https://www.npmjs.com/package/react-router
 
+// MainContainer holds state to allow toggle between homepage, signup page and login page
 class MainContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,7 @@ class MainContainer extends React.Component {
       loggedIn: false
     };
     this.views = {
-      'login': <LoginView  />,
+      'login': <LoginView />,
       'signup': <SignUpView />,
       'home': <HomePage />,
       'favorites': <FavoritesView />

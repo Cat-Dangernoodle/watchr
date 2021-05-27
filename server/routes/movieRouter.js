@@ -6,14 +6,14 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
-// refactor res.locals.kyung with a more descriptive name
+// handle post request to search for requested movie
 router.post(
   '/search',
   userController.getIMDB,
   userController.searchServices,
   (req, res) => {
-    console.log('Search results: ', res.locals.kyung);
-    res.status(200).json(res.locals.kyung);
+    console.log('Search results: ', res.locals.result);
+    res.status(200).json(res.locals.result);
   },
 );
 

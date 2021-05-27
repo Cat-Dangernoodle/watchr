@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 // import { Redirect } from 'react-router-dom';
 import './styles/LoginManager.css';
 
+// local state variables to set username and password for login and sending fetch request for authentication
 const LoginManager = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -36,6 +37,7 @@ const LoginManager = () => {
       });
   }
 
+  // rendering username, password fields and login button
   return (
     <div id="login-container" className="loginManager">
       <div className="Login-Manager">
@@ -59,13 +61,13 @@ const LoginManager = () => {
             onChange={() => setPassword(e.target.value)}
             value={password}
           />
-      </div>
-      { error ? errorSpan : null }
-      <button type="submit" className="Loginbutton" onClick={handleClick}>
-        Log In
+        </div>
+        {error ? errorSpan : null}
+        <button type="submit" className="Loginbutton" onClick={handleClick}>
+          Log In
       </button>
-      <br />
-      <br />
+        <br />
+        <br />
       </div>
     </div>
   );

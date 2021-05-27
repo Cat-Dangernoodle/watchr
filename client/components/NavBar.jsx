@@ -1,5 +1,6 @@
 import React from 'react';
 
+// currently work in progress
 const NavBar = (props) => {
 
   const logOut = () => {

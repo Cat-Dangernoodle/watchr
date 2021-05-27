@@ -4,6 +4,7 @@
 import React from 'react';
 import './styles/StreamSelect.css';
 
+// render checkbox for selecting streaming service and set to props 
 class StreamSelect extends React.Component {
   render() {
     return (

@@ -3,6 +3,8 @@
 import React from 'react';
 import './styles/MovieInput.css';
 
+
+// MovieInput component, state to handle film search and send fetch request to API
 class MovieInput extends React.Component {
   constructor(props) {
     super(props);
@@ -13,12 +15,14 @@ class MovieInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // updating state with movie input
   handleOnMovieChange(e) {
     this.setState({
       movieInput: e.target.value,
     });
   }
 
+  // on button click, fetch request sent to API using movie input set to state
   handleSubmit() {
     fetch('/movie/search', {
       method: 'POST',
@@ -33,6 +37,7 @@ class MovieInput extends React.Component {
       .then((data) => this.props.onResponse(data));
   }
 
+  // rendering input field to search film 
   render() {
     return (
       <div id="movie-input-container">
