@@ -1,21 +1,24 @@
 #login-container {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1rem;
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(5, 20, 70);
+  background-color:navy;
+;
 
 }
 .Login-Manager {
-  border: .3rem groove rgb(255, 255, 255);
+  border: 1px white;
   border-radius: 1rem;
   width: 18%;
   padding: 2rem;
   padding-bottom: 1rem;
   background-color: rgb(158, 199, 253);
+  box-shadow: 5px 5px 10px gray;
 }
-
 .Loginbutton {
   margin-top: 2rem;
   float: right;
@@ -26,7 +29,8 @@
   cursor: pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-  border: thin solid black;
+  /* border: thin solid black; */
+  box-shadow: 5px 5px 10px gray;
 }
 .stander {
   display: flex;
@@ -56,6 +60,8 @@
 export default LoginManager.css */
 .user {
   margin-right: 2em;
+  box-shadow: 5px 5px 10px gray;
+  border-radius: 5px;
 }
 .imagine {
   border-style: solid;
@@ -71,4 +77,8 @@ export default LoginManager.css */
   flex-direction: column;
   justify-content: space-between;
   /* padding-right: 400px; */
+}
+.Password {
+  box-shadow: 5px 5px 10px gray;
+  border-radius: 5px;
 }

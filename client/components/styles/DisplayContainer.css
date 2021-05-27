@@ -1,13 +1,26 @@
 #display-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
+
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 5px 5px 10px gray;
+  border-radius: 1rem;
+  width: 18%;
   padding: 2rem;
-  border: .5rem double rgb(124, 0, 0);
-  background-color: rgb(235, 243, 252);
+  padding-bottom: 1rem;
+  background-color: rgb(158, 199, 253);
 }
 
-#display-container span {
-  margin: 1rem 0;
+#availToStream {
+  display: flex;
+  justify-content: center;
 }
+
+#movieImg {
+  vertical-align: middle;
+  width: 70%;
+  height: 70%;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 5px 5px 10px gray;
+  
+}
+
