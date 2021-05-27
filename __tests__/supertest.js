@@ -38,6 +38,23 @@ describe('Routes', () => {
   });
 
   describe('/user', () => {
-    // fill in user endpoints here
+    describe('POST', () => {
+      it('', async () => {
+
+      });
+    });
+    describe('POST /signup', () => {
+      it('', async () => {
+
+      });
+    });
+  });
+
+  describe('/movie', () => {
+    describe('POST', () => {
+      it('', async () => {
+
+      });
+    });
   });
 });
