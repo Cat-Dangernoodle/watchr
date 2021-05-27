@@ -8,7 +8,7 @@ const router = express.Router();
 
 // search for a movie
 router.get(
-  '/search',
+  '/',
   movieController.getIMDB,
   movieController.getServices,
   (req, res) => {
