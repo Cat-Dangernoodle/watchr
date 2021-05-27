@@ -11,8 +11,10 @@ const LoginManager = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  // handle invalid login
   const errorSpan = <span>Please use valid username or password</span>;
 
+  // console.log is just a fun gimick for interal purposes
   const handleClick = () => {
     console.log(
       '%cLogin Initiated!',

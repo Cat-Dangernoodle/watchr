@@ -2,18 +2,18 @@
 const express = require('express');
 const path = require('path');
 const dbController = require('../controllers/dbController');
-const userController = require('../controllers/userController');
+const movieController = require('../controllers/movieController');
 
 const router = express.Router();
 
-// handle post request to search for requested movie
-router.post(
-  '/search',
-  userController.getIMDB,
-  userController.searchServices,
+// search for a movie
+router.get(
+  '/',
+  movieController.getIMDB,
+  movieController.getServices,
   (req, res) => {
-    console.log('Search results: ', res.locals.result);
-    res.status(200).json(res.locals.result);
+    console.log('Search results: ', res.locals.movie);
+    res.status(200).json(res.locals.movie);
   },
 );
 
