@@ -3,11 +3,13 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import HomePage from './components/HomePage.jsx';
+// import NavBar from './components/NavBar';
 
 import FavoritesView from './views/FavoritesView.jsx';
 import HomeView from './views/HomeView.jsx';
 import LoginView from './views/LoginView.jsx';
 import SignUpView from './views/SignUpView.jsx';
+// import './styles/StreamSelect.css';
 
 import './components/styles/MainContainer.css';
 
@@ -22,7 +24,7 @@ class MainContainer extends React.Component {
       loggedIn: false
     };
     this.views = {
-      'login': <LoginView />,
+      'login': <LoginView  />,
       'signup': <SignUpView />,
       'home': <HomePage />,
       'favorites': <FavoritesView />
