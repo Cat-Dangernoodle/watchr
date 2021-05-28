@@ -3,6 +3,7 @@ import MovieInput from './MovieInput.jsx';
 import DisplayContainer from './DisplayContainer.jsx';
 import './styles/HomePage.css';
 
+// local state variables for streaming services and poster URL that are being passed down to MovieInput and Display Container
 const HomePage = () => {
   const [posterUrl, setPosterUrl] = useState(
     'https://image.tmdb.org/t/p/w342/1qELdgcbbDjlpDDRwdYTl2MzuVu.jpg',
@@ -19,6 +20,7 @@ const HomePage = () => {
     setPosterUrl(data.poster);
   };
 
+  // rendering poster and streaming services
   return (
     <div id="homepage-container">
       <MovieInput onResponse={handleResponse} />

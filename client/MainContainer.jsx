@@ -7,7 +7,7 @@ import HomePage from './components/HomePage.jsx';
 
 import FavoritesView from './views/FavoritesView.jsx';
 import HomeView from './views/HomeView.jsx';
-import LoginView from './views/LogInView.jsx';
+import LoginView from './views/LoginView.jsx';
 import SignUpView from './views/SignUpView.jsx';
 // import './styles/StreamSelect.css';
 
@@ -16,6 +16,7 @@ import './components/styles/MainContainer.css';
 // React Router Documentation
 // https://www.npmjs.com/package/react-router
 
+// MainContainer holding login state, using react router to display homepage, login and signup
 class MainContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -23,14 +24,6 @@ class MainContainer extends React.Component {
       //current: 'signup',
       loggedIn: false
     };
-
-    // this.views = {
-    //   'login': <LoginView />,
-    //   'signup': <SignUpView />,
-    //   'home': <HomePage />,
-    //   'favorites': <FavoritesView />
-    // };
-
   }
 
   toggleCurrent = (value) => {
@@ -40,12 +33,6 @@ class MainContainer extends React.Component {
   render() {
     return (
       <div>
-        {/* -- NavBar here -- */}
-        {/* <button onClick={() => this.toggleCurrent('login')} >Log In</button>
-        <button onClick={() => this.toggleCurrent('signup')} >Sign Up</button>
-        <button onClick={() => this.toggleCurrent('home')} >Home</button>
-        {this.views[this.state.current]} */}
-
         <Router>
           <div>
             <nav>

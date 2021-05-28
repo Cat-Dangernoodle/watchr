@@ -37,7 +37,7 @@ movieController.getIMDB = (req, res, next) => {
 movieController.getServices = (req, res, next) => {
   // need info stored at res.locals.imdb to continue
   if (res.locals.imdb === undefined) return next({ message: 'error fetching film' });
-  
+
   // parse cookies to read user services
   console.log('Search query: ', req.body.search);
   const array = [];

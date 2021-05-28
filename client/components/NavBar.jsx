@@ -1,5 +1,6 @@
 import React from 'react';
 
+// currently work in progress - to implement a navbar
 const NavBar = (props) => {
 
   const logOut = () => {

@@ -2,8 +2,6 @@
 const { Pool, Client } = require('pg');
 const variables = require('../../variables');
 
-// const PG_URI =
-//   'postgres://avlofxwe:slIgslC7C_3bZouSFtWb17CEjmDv-yEC@otto.db.elephantsql.com/avlofxwe';
 const PG_URI = variables.SQLstring;
 
 // create a new pool here using the connection string above

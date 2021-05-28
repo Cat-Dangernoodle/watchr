@@ -6,16 +6,13 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
-// TO-DO: set cookies on /signup as well as login
-
-// send back user data
 router.post('/signup',
   userController.signup,
   (req, res) => {
     res.status(200).send({ user: res.locals.newUser })
   });
 
-// send back user data
+// handle post request for login and setting cookie and send back response
 router.post(
   '/',
   userController.login,
