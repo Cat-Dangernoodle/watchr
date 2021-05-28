@@ -6,7 +6,6 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
-// handle post request for signup page and send back response
 router.post('/signup',
   userController.signup,
   (req, res) => {
