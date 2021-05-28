@@ -6,6 +6,8 @@ const userController = require('../controllers/userController');
 
 const router = express.Router();
 
+// TO-DO: set cookies on /signup as well as login
+
 // send back user data
 router.post('/signup',
   userController.signup,
