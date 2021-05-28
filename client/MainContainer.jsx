@@ -48,12 +48,12 @@ class MainContainer extends React.Component {
 
         <Router>
           <div>
-            <Route path="/" component={LoginView} exact />
             <nav>
               <Link to="/login">Log In</Link>
               <Link to="/signup">Sign Up</Link>
               <Link to="/home">Home</Link>
             </nav>
+            <Route path="/" component={LoginView} exact />
             <Route path="/login" component={LoginView} />
             <Route path="/signup" component={SignUpView} />
             <Route path="/home" component={HomePage} />
