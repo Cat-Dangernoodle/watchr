@@ -77,21 +77,3 @@ const LoginManager = () => {
 
 export default LoginManager;
 
-/*
-        <img
-          className="imagine"
-          src="https://i.ytimg.com/vi/xBasQG_6p40/maxresdefault.jpg"
-          // src="https://pyxis.nymag.com/v1/imgs/018/9f3/7996faec0d5437015d516b3b4171602894-28-best-horror-films.2x.rhorizontal.w700.jpg"
-          alt="movie reels"
-        />
-          <img
-            className="stander"
-            src="https://www.comingsoon.net/assets/styd/assets/uploads/2016/03/2000pos3.jpg"
-            alt="Pan's Labyrinth"
-          />
-          <img
-            className="stander2"
-            src="https://upload.wikimedia.org/wikipedia/en/6/6d/Evil_Dead_II_poster.jpg"
-            alt="Evil Dead II"
-           />
-*/

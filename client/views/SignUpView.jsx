@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import StreamSelect from '../components/StreamSelect.jsx';
 import '../components/styles/SignUpManager.css';
 
+// local state variables to set state for username, password, email and streaming services
 const SignUpManager = () => {
   const [newUser, setNewUser] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -15,6 +16,7 @@ const SignUpManager = () => {
     netflix: false,
   });
 
+  // Handle updating state of streaming services user selects
   const handleStreamChange = (e) => {
     setStreams((prev) => {
       const { name } = e.target;
@@ -27,6 +29,7 @@ const SignUpManager = () => {
     });
   };
 
+  // Handle button click, which will send a fetch request with header to post sign up credentials
   const handleSubmitClick = (e) => {
     e.preventDefault();
     console.log('Clicked submit on SignUp');
@@ -69,12 +72,16 @@ const SignUpManager = () => {
     setEmail(e.target.value);
   };
 
+  // storing user streams selected
   const streamsInput = [streams.amazon, streams.hulu, streams.netflix];
 
+  // fun font display for interal use only
   console.log(
     '%cSignup Initiated!',
     'font-weight: bold; font-size: 53px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38), 6px 6px 0 rgb(226,91,14), 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)',
   );
+
+  // rendering sign up form
   return (
     <div id="signup-container" className="ViewButton">
       <form id="signup-form" method="POST" action="/signup">
@@ -107,116 +114,4 @@ const SignUpManager = () => {
 };
 export default SignUpManager;
 
-/*
-// Class component inherits from React.Component in order to
-// use functionality (e.g. setState) present in React.Component
-class SignUpManager extends React.Component {
-  // Constructor method runs every time we render a *new* SignUpManager
-  constructor() {
-    super();
-    // Initialize state of our component
-    this.state = {
-      newUser: '',
-      newPassword: '',
-      email: '',
-      amazon: false,
-      hulu: false,
-      netflix: false,
-    };
 
-    // Bind method to * this * particular instance of SignUpManager
-    this.handleOnChangeUser = this.handleOnChangeUser.bind(this);
-    this.handleOnChangePassword = this.handleOnChangePassword.bind(this);
-    this.handleOnChangeEmail = this.handleOnChangeEmail.bind(this);
-    this.handleSubmitClick = this.handleSubmitClick.bind(this);
-    this.handleStreamChange = this.handleStreamChange.bind(this);
-  }
-
-  handleStreamChange(e) {
-    this.setState((prev) => {
-      const { name } = e.target;
-      const value = !prev[name];
-
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  }
-
-  handleSubmitClick(e) {
-    e.preventDefault();
-    console.log(this.state);
-  }
-
-  // Handle input change, receives e argument if passed in as the
-  // callback to onChange
-  handleOnChangeUser(e) {
-    // Set ONLY the "newUser" state by passing in an object containing
-    // "newUser" as a property with the corresponding, updated value
-    this.setState({
-      newUser: e.target.value,
-    });
-  }
-
-  handleOnChangePassword(e) {
-    this.setState({
-      newPassword: e.target.value,
-    });
-  }
-
-  handleOnChangeEmail(e) {
-    this.setState({
-      email: e.target.value,
-    });
-  }
-
-  // What you want to render on the webpage
-  render() {
-    // Return HTML/jsx elements
-    // Must return a *single* element
-    const streamInputs = [
-      this.state.amazon,
-      this.state.hulu,
-      this.state.netflix,
-    ];
-
-    return (
-      <div id="signup-container">
-        <form id="signup-form">
-          <span id="signup-title">Create Account</span>
-          <div id="signup-email">
-            Email:{' '}
-            <input
-              type="text"
-              onChange={this.handleOnChangeEmail}
-              value={this.state.email}
-            />
-          </div>
-          <div id="signup-username">
-            Username:{' '}
-            <input
-              type="text"
-              onChange={this.handleOnChangeUser}
-              value={this.state.newUser}
-            />
-          </div>
-          <div id="signup-password">
-            Password:{' '}
-            <input
-              type="text"
-              onChange={this.handleOnChangePassword}
-              value={this.state.newPassword}
-            />
-          </div>
-          <StreamSelect
-            streamPrefs={streamInputs}
-            onStreamChange={this.handleStreamChange}
-          />
-          <button onClick={this.handleSubmitClick}> Sign Up </button>
-        </form>
-      </div>
-    );
-  }
-}
-*/
