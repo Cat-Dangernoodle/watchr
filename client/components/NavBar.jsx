@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import './styles/NavBar.css';
 const NavBar = (props) => {
 
   const logOut = () => {
@@ -7,9 +8,14 @@ const NavBar = (props) => {
   }
 
   return (
-    <div id="navbar" >
-      <span onClick={() => props.setState({ current: 'home' })}>Home</span>
-      <span onClick={logOut}>Log Out</span>
+    <div class="bar">
+      <ul class="links">
+        <Link to="/login">Log In</Link>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <Link to="/signup">Sign Up</Link>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <Link to="/home">Home</Link>
+      </ul>
     </div>
   )
 };

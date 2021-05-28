@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import HomePage from './components/HomePage.jsx';
-// import NavBar from './components/NavBar';
+import NavBar from './components/NavBar.jsx';
 
 import FavoritesView from './views/FavoritesView.jsx';
 import HomeView from './views/HomeView.jsx';
@@ -48,12 +48,8 @@ class MainContainer extends React.Component {
 
         <Router>
           <div>
+            <NavBar />
             <Route path="/" component={LoginView} exact />
-            <nav>
-              <Link to="/login">Log In</Link>
-              <Link to="/signup">Sign Up</Link>
-              <Link to="/home">Home</Link>
-            </nav>
             <Route path="/login" component={LoginView} />
             <Route path="/signup" component={SignUpView} />
             <Route path="/home" component={HomePage} />
