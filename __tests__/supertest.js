@@ -39,21 +39,44 @@ describe('Routes', () => {
 
   describe('/user', () => {
     describe('POST', () => {
-      it('', async () => {
-
+      it('sends back user information after logging in', async () => {
+        const response = await request(app)
+          .post('/user')
+          .send({ username: 'Thomas', password: 'codesmith' });
+        
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toEqual({ user: 'Thomas' });
       });
     });
     describe('POST /signup', () => {
-      it('', async () => {
-
+      it('sends back user information after signing up', async () => {
+        const response = await request(app)
+          .post('/user/signup')
+          .set('Content-Type', 'application/json')
+          .send({
+            newUser: 'ThomasClone',
+            newPassword: 'codesmith',
+            email: 'test@test.com',
+            amazon: true,
+            hulu: true,
+            netflix: true,
+          });
+        
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({ user: 'ThomasClone' });
       });
     });
   });
 
   describe('/movie', () => {
-    describe('POST', () => {
-      it('', async () => {
-
+    describe('GET', () => {
+      it('sends back movie data', async () => {
+        // route has query string of ?title=Paddington attached
+        const response = await request(app)
+          .get('/movie/?title=Paddington');
+        
+        expect(response.status).toBe(200);
+        expect(response.body).toEqual({ movie: '???' });
       });
     });
   });
